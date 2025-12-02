@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #77afe0, #a479eb);
+    background: linear-gradient(135deg, #229de4, #04000a);
 }
 
 .main {
@@ -71,4 +71,62 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rebeccapurple;
 
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.item {
+    background: linear-gradient(45deg, rgb(143, 198, 229), rgb(181, 154, 230));
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: #a479eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+}
+
+.task-content {
+    font-size: 1.2mm;
+    margin-right: 15px;
+    word-wrap: break-word;
+    line-height: 1.4;
+    flex-grow: 1;
+    
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+
+}
+
+.btn {
+    background-color: antiquewhite;
+    color:rgb(78, 53, 190);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9mm;
+    cursor: pointer;
+    opacity: 0.8;
 }
