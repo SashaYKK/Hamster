@@ -19,7 +19,8 @@
             <button id="add-btn">Add new note</button>
         </div>
         <ul class="task-list">
-            <li class="item low-priority">
+            <li class="item low-priority"
+            onclick="this.classList.toggle('completed')">
                 <span>Написать реферат</span>
                 <div class="actions">
                     <button class="btn"onclick="this.parentNode.parentNode.remove()">
@@ -28,7 +29,7 @@
                         </span> </button>
                 </div>
             </li>
-            <li class="item high-priority">
+            <li class="item high-priority"onclick="this.classList.toggle('completed')">
                 <span>Выступить на конференции</span>
                 <div class="actions">
                     <button class="btn" onclick="this.parentNode.parentNode.remove()">
@@ -37,7 +38,7 @@
                         </span> </button>
                 </div>
             </li>
-            <li class="item high-priority">
+            <li class="item high-priority"onclick="this.classList.toggle('completed')">
                 <span>Полететь в космос</span>
                 <div class="actions">
                     <button class="btn" onclick="this.parentNode.parentNode.remove()">
@@ -46,7 +47,7 @@
                         </span> </button>
                 </div>
             </li>
-            <li class="item">
+            <li class="item"onclick="this.classList.toggle('completed')">
                 <span>Спааааааать</span>
                 <div class="actions">
                     <button class="btn"onclick="this.parentNode.parentNode.remove()">
@@ -55,7 +56,7 @@
                         </span> </button>
                 </div>
             </li>
-            <li class="item medium-priority completed">
+            <li class="item medium-priority completed"onclick="this.classList.toggle('completed')">
                 <span class="task-content">Сварить пельмешки</span>
                 <div class="actions">
                     <button class="btn"onclick="this.parentNode.parentNode.remove()">
