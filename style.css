@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #229de4, #04000a);
+    background: linear-gradient(135deg, #229de4,rebeccapurple, #04000a);
 }
 
 .main {
@@ -102,7 +102,7 @@ body {
 }
 
 .task-content {
-    font-size: 1.2mm;
+    font-size: 1.2em;
     margin-right: 15px;
     word-wrap: break-word;
     line-height: 1.4;
@@ -129,4 +129,36 @@ body {
     font-size: 0.9mm;
     cursor: pointer;
     opacity: 0.8;
+}
+
+.item.high-priority {
+    border-left: 8px solid rgb(4, 102, 158);
+
+}
+
+.item.medium-priority {
+    border-left: 8px solid rgb(22, 132, 196) ;
+}
+
+.item.low-priority {
+    border-left: 8px solid rgb(211, 229, 240);
+}
+
+.item.completed {
+    background-color: antiquewhite;
+    opacity: 0.6;
+    box-shadow: 0 5px 8px rgb(84, 163, 48);
+}
+
+.item.completed .task-content {
+    text-decoration: line-through;
+    color: azure;
+}
+.task-list:not(:has(>*))::before {
+    content: "There aren't any tasks.It's time to add them!";
+    padding: 30px;
+    display: block;
+    font-style: italic;
+    text-align: center;
+
 }

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мои дела</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
 </head>
 
 <body>
@@ -18,49 +19,54 @@
             <button id="add-btn">Add new note</button>
         </div>
         <ul class="task-list">
-            <li class="item">
+            <li class="item low-priority">
                 <span>Написать реферат</span>
                 <div class="actions">
-                    <button class="btn"> <span class="material-symbols-outlined">
-                        delete
+                    <button class="btn"onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">
+                            delete
                         </span> </button>
                 </div>
             </li>
-            <li class="item">
-                <span>Поспать</span>
+            <li class="item high-priority">
+                <span>Выступить на конференции</span>
                 <div class="actions">
-                    <button class="btn"> <span class="material-symbols-outlined">
-                        delete
+                    <button class="btn" onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">
+                            delete
                         </span> </button>
                 </div>
             </li>
-            <li class="item">
+            <li class="item high-priority">
                 <span>Полететь в космос</span>
                 <div class="actions">
-                    <button class="btn"> <span class="material-symbols-outlined">
-                        delete
+                    <button class="btn" onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">
+                            delete
                         </span> </button>
                 </div>
             </li>
             <li class="item">
                 <span>Спааааааать</span>
                 <div class="actions">
-                    <button class="btn"> <span class="material-symbols-outlined">
-                        delete
+                    <button class="btn"onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">
+                            delete
                         </span> </button>
                 </div>
             </li>
-            <li class="item">
-                <span>Сварить пельмешки</span>
+            <li class="item medium-priority completed">
+                <span class="task-content">Сварить пельмешки</span>
                 <div class="actions">
-                    <button class="btn"> <span class="material-symbols-outlined">
-                        delete
+                    <button class="btn"onclick="this.parentNode.parentNode.remove()">
+                        <span class="material-symbols-outlined">
+                            delete
                         </span> </button>
                 </div>
             </li>
 
 
-           
+
         </ul>
     </div>
 </body>
