@@ -68,20 +68,77 @@ function createTaskElement(task) {
 
     newTaskEl.innerHTML = `
     <span class="task-content"> ${task.title} </span>
-    <div class="actions">
-        <button class="btn" >
-            <span class="material-symbols-outlined">
-                delete
-            </span> </button> 
+    <div class="task-actions">
+        <button class="btn btn-change-priority">
+            <span class="material-symbols-outlined">arrow_shape_up_stack</span>
+        </button>
+        <button class="btn btn-edit">
+            <span class="material-symbols-outlined">edit</span>
+        </button>
+        <button class="btn btn-delete">
+            <span class="material-symbols-outlined">delete</span>
+        </button>
     </div>`
 
     
     newTaskEl
-            .querySelector('button.btn')
+            .querySelector('button.btn-delete')
             .addEventListener('click', (ev) => {
             ev.currentTarget.parentNode.parentNode.remove();
             TASKS = TASKS.filter(x => x.title != task.title);
             taskStorage.save(TASKS)
+        });
+
+    newTaskEl
+        .querySelector('button.btn-change-priority')
+        .addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            const el = ev.currentTarget.parentNode.parentNode;
+            switch (task.priority) {
+                case 'low':
+                    task.priority = 'medium'
+                    el.classList.remove('low-priority');
+                    el.classList.add('medium-priority');
+                    break;
+                case 'medium':
+                    task.priority = 'high'
+                    el.classList.remove('medium-priority');
+                    el.classList.add('high-priority');
+                    break;
+                default:
+                    task.priority = 'low'
+                    el.classList.remove('high-priority');
+                    el.classList.add('low-priority');
+                    break;
+            }
+           
+
+            taskStorage.save(TASKS);
+        });
+
+        newTaskEl
+        .querySelector('button.btn-edit')
+        .addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            console.log('нажата кнопка редактирования')
+
+            const newTitle = prompt('remove the goal',task.title);
+
+            if (newTitle.trim()) {
+                task.title= newTitle;
+
+                ev.currentTarget
+                    .parentNode
+                    .parentNode
+                    .querySelector('span.task-content')
+                    .innerText = newTitle;
+            }
+
+            taskStorage.save(TASKS);
         });
     
     taskListEl.append(newTaskEl);

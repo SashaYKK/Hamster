@@ -113,7 +113,6 @@ body {
 .task-actions {
     display: flex;
     gap: 10px;
-
 }
 
 .btn {
@@ -160,5 +159,4 @@ body {
     display: block;
     font-style: italic;
     text-align: center;
-
 }
